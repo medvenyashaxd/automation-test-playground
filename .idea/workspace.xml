@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665fe653-48a7-4a30-ad8b-f6196a4f3fdc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/AutomationPlayground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/BeforeStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/steps/afterStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" afterDir="false" />
+    <list default="true" id="665fe653-48a7-4a30-ad8b-f6196a4f3fdc" name="Changes" comment="added first test with &quot;Dynamic ID&quot;">
+      <change afterPath="$PROJECT_DIR$/src/test/java/locators/PlaygraundLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/AutomationPlayground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/AutomationPlayground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +43,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/xmedv/IdeaProjects/Studies",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Different automation test">
     <configuration name="Scenario: Different automation test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" />
@@ -76,9 +73,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="1665415072474.0.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/UI-test-automation-playground/build/reports/tests/1665415072474.0.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="1665415154565.0.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/UI-test-automation-playground/build/reports/tests/1665415154565.0.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Cucumber Java.Scenario: Different automation test" />
+        <item itemvalue="JavaScript Debug.1665415154565.0.html" />
+        <item itemvalue="JavaScript Debug.1665415072474.0.html" />
       </list>
     </recent_temporary>
   </component>
@@ -90,8 +95,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665342165906</updated>
-      <workItem from="1665342168196" duration="4985000" />
+      <workItem from="1665342168196" duration="5657000" />
+      <workItem from="1665403053209" duration="11233000" />
+      <workItem from="1665419046393" duration="3996000" />
+      <workItem from="1665425774224" duration="7994000" />
+      <workItem from="1665433907871" duration="1046000" />
     </task>
+    <task id="LOCAL-00001" summary="added first test with &quot;Dynamic ID&quot;">
+      <created>1665348138764</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665348138764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,10 +119,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added first test &quot;Dynamic ID&quot;" />
+    <MESSAGE value="added first test with &quot;Dynamic ID&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added first test with &quot;Dynamic ID&quot;" />
   </component>
 </project>
