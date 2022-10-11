@@ -9,3 +9,7 @@ Feature: UI Test Automation Playground
       When Go to Load delays test
       When Go to AJAX data test
       When Go to Client side delay test
+      When Go to Click test
+      When Go to Text input test
+      When Go to Scroll test
+      When Go to Dynamic Table test
