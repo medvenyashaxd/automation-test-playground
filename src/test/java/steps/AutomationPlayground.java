@@ -223,4 +223,3 @@ public class AutomationPlayground {
         Selenide.sleep(1000);
     }
 }
-

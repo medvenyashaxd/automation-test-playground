@@ -15,4 +15,3 @@ public class afterStep {
         Selenide.screenshot(System.currentTimeMillis() + "step");
     }
 }
-

@@ -10,6 +10,5 @@ public class BeforeStep {
     public void openSite(String url){
         Configuration.browserSize = "1920x1080";
         Selenide.open(url);
-        
     }
 }
