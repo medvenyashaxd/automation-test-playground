@@ -4,8 +4,11 @@ import com.codeborne.selenide.*;
 import io.cucumber.java.en.When;
 import locators.PlaygroundLocators;
 import org.openqa.selenium.Alert;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.codeborne.selenide.Selenide.actions;
 
 
 public class AutomationPlayground {
@@ -133,6 +136,93 @@ public class AutomationPlayground {
                 break;
             }
         }
+    }
+
+    @When ("Go to Verify Text test")
+    public void verifyTextTest(){
+        goToHomePage();
+        locators.buttonVerifyTextTest.click();
+        locators.textVerifyTest.shouldHave(Condition.text("Welcome UserName!"));
+    }
+
+    @When ("Go to Progress bar test")
+    public void progressBarTest(){
+        goToHomePage();
+        locators.buttonProgressBarTest.click();
+        locators.buttonStartProgress.click();
+        while (true) {
+            if (locators.progressBar.text().equals("75%")) {
+                locators.buttonStopProgress.click();
+                break;
+            }
+        }
+        Selenide.sleep(1000);
+    }
+
+    @When ("Go to Visibility test")
+    public void visibilityTest(){
+        goToHomePage();
+        locators.buttonVisibilityTest.scrollIntoView(true).click();
+        locators.buttonRemoved.shouldBe(Condition.exist);
+        locators.buttonHide.click();
+        locators.buttonRemoved.shouldBe(Condition.not(Condition.exist));
+
+        locators.buttonOpacity.shouldHave(Condition.attributeMatching("style", "opacity: 0;"));
+        locators.buttonZeroWidth.should(Condition.not(Condition.visible));
+
+        locators.buttonOverLapped.should(Condition.exist);
+        locators.buttonHidingLayer.shouldHave(Condition.attributeMatching("style",
+                "position: absolute; background-color: white; width: 108px; height: 38px; left: 1230.75px; top: 487.188px;"));
+
+        locators.buttonInvisible.should(Condition.not(Condition.visible));
+        locators.buttonDisplayNone.shouldHave(Condition.attributeMatching("style",
+                                                                                        "display: none;"));
+        locators.buttonOffScreen.should(Condition.not(Condition.visible));
+        locators.buttonOffScreen.should(Condition.exist);
+    }
+
+
+    @When("Go to Sample app test, username {string}, password {string}")
+    public void SampleAppTest(String username, String password){
+        goToHomePage();
+        locators.buttonSampleAppTest.scrollIntoView(true).click();
+        locators.loginStatus.shouldHave(Condition.text("User logged out."));
+        locators.inputUserName.sendKeys(username);
+        locators.inputPassword.sendKeys(password);
+        locators.buttonLogin.click();
+        locators.loginStatus.shouldHave(Condition.text("Welcome, qwe!"));
+        Selenide.sleep(1000);
+    }
+
+
+
+    @When("Go to Mouse Over test")
+    public void MouseOverTest(){
+        goToHomePage();
+        locators.buttonMouseOverTest.scrollIntoView(true).click();
+        actions().moveToElement(locators.moveMouseClickMe).perform();
+        locators.afterMoveMouseAction.doubleClick();
+        locators.clickCount.shouldHave(Condition.text("2"));
+        Selenide.sleep(1000);
+    }
+
+
+    @When("Go to Non-Breaking Space test")
+    public void nonBreakingSpaceTest(){
+        goToHomePage();
+        locators.buttonNonBreakingSpaceTest.scrollIntoView(true).click();
+        locators.buttonMyButton.shouldHave(Condition.visible);
+    }
+
+
+    @When("Go to Overlapped element test")
+    public void OverlappedElement(){
+        goToHomePage();
+        locators.buttonOverlappedTest.scrollIntoView(true).click();
+        locators.idInput.sendKeys("qwe");
+        SelenideElement nameInput = locators.nameInput;
+        nameInput.scrollIntoView(true).sendKeys("abc");
+        Selenide.sleep(1000);
     }
 }
 
