@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665fe653-48a7-4a30-ad8b-f6196a4f3fdc" name="Changes" comment="added added Class Attribute test, Hidden Layers test, Load Delay test, AJAX Data test, Client Side Delay test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/locators/PlaygroundLocators.java" afterDir="false" />
+    <list default="true" id="665fe653-48a7-4a30-ad8b-f6196a4f3fdc" name="Changes" comment="added Verify Text test, Progress Bar test, Visibility test, Sample App test,&#10;Mouse Over test, Non-Breaking Space test,&#10;Overlapped Element test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/locators/PlaygraundLocators.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/AutomationPlayground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/AutomationPlayground.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/scenarios/AutomationPlayground.feature" afterDir="false" />
     </list>
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665435192486</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added Verify Text test, Progress Bar test, Visibility test, Sample App test,&#10;Mouse Over test, Non-Breaking Space test,&#10;Overlapped Element test">
+      <created>1665689742810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665689742810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +162,8 @@
     <MESSAGE value="added first test &quot;Dynamic ID&quot;" />
     <MESSAGE value="added first test with &quot;Dynamic ID&quot;" />
     <MESSAGE value="added added Class Attribute test, Hidden Layers test, Load Delay test, AJAX Data test, Client Side Delay test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added added Class Attribute test, Hidden Layers test, Load Delay test, AJAX Data test, Client Side Delay test" />
+    <MESSAGE value="added Verify Text test, Progress Bar test, Visibility test, Sample App test,&#10;Mouse Over test, Non-Breaking Space test,&#10;Overlapped Element test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Verify Text test, Progress Bar test, Visibility test, Sample App test,&#10;Mouse Over test, Non-Breaking Space test,&#10;Overlapped Element test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

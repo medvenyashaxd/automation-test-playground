@@ -4,10 +4,8 @@ import com.codeborne.selenide.*;
 import io.cucumber.java.en.When;
 import locators.PlaygroundLocators;
 import org.openqa.selenium.Alert;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static com.codeborne.selenide.Selenide.actions;
 
 

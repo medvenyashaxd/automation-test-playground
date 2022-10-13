@@ -13,3 +13,10 @@ Feature: UI Test Automation Playground
       When Go to Text input test
       When Go to Scroll test
       When Go to Dynamic Table test
+      When Go to Verify Text test
+      When Go to Progress bar test
+      When Go to Visibility test
+      When Go to Sample app test, username "qwe", password "pwd"
+      When Go to Mouse Over test
+      When Go to Non-Breaking Space test
+      When Go to Overlapped element test
