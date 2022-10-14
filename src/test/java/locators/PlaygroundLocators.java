@@ -2,6 +2,9 @@ package locators;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.selector.ByShadow;
+
+import static com.codeborne.selenide.Selectors.shadowCss;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PlaygroundLocators {
@@ -164,5 +167,13 @@ public class PlaygroundLocators {
 
     public final SelenideElement idInput = $("input[id='id']");
     public final SelenideElement nameInput = $("input[id='name']");
+    // ----------------------------------------------------------------------------------------------------------------
+
+    // For test Shadow Dom
+    public final SelenideElement buttonShadowDomTest =
+                                                $x("//div[@class='row'][5]//div[@class='col-sm'][2]/h3/a");
+    public final SelenideElement buttonGenerate = $(shadowCss(".button-generate", "guid-generator"));
+    public final SelenideElement buttonCopy = $(shadowCss(".button-copy", "guid-generator"));
+    public final SelenideElement inputShadowDom = $(shadowCss(".edit-field", "guid-generator"));
     // ----------------------------------------------------------------------------------------------------------------
 }

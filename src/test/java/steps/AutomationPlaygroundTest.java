@@ -3,29 +3,34 @@ package steps;
 import com.codeborne.selenide.*;
 import io.cucumber.java.en.When;
 import locators.PlaygroundLocators;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import java.util.ArrayList;
 import java.util.List;
 import static com.codeborne.selenide.Selenide.actions;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class AutomationPlayground {
+public class AutomationPlaygroundTest extends BeforeStep{
     PlaygroundLocators locators = new PlaygroundLocators();
 
+//    public void goToHomePage(){
+//        locators.navBarHome.click();
+//    }
+    public void openSite(){ Selenide.open("http://uitestingplayground.com/");}
 
-    public void goToHomePage(){
-        locators.navBarHome.click();
-    }
-
+    @Test
     @When ("Go to Dynamic ID test")
     public void dynamicIdTest(){
+        openSite();
         locators.dynamicIdButtonTest.click();
         locators.buttonWithDynamicId.click();
     }
 
+    @Test
     @When ("Go to Class attribute test")
     public void classAttributeTest(){
-        goToHomePage();
+        openSite();
         locators.buttonWithClassAttributeTest.click();
         locators.blueButtonForAttributeTest.click();
 
@@ -36,9 +41,10 @@ public class AutomationPlayground {
         alert.accept();
     }
 
+    @Test
     @When("Go to Hidden layers test")
     public void hiddenLayersTest(){
-        goToHomePage();
+        openSite();
         locators.buttonHiddenLayersTest.click();
 
         locators.buttonBlueLayers.shouldBe(Condition.not(Condition.exist));
@@ -46,17 +52,19 @@ public class AutomationPlayground {
         locators.buttonBlueLayers.shouldBe(Condition.be(Condition.visible));
     }
 
+    @Test
     @When ("Go to Load delays test")
     public void loadDelayTest(){
-        goToHomePage();
+        openSite();
         locators.buttonLoadDelaysTest.click();
         locators.buttonAppearingAfterDelay.shouldBe(Condition.be(Condition.visible));
     }
 
+    @Test
     @When ("Go to AJAX data test")
     public void ajaxDataTest(){
         Configuration.timeout = 16000;
-        goToHomePage();
+        openSite();
         locators.buttonAjaxDataTest.click();
         locators.buttonAjax.click();
         locators.ajaxSpinner.shouldBe(Condition.be(Condition.appear));
@@ -66,9 +74,10 @@ public class AutomationPlayground {
         assert status.equals("Data loaded with AJAX get request.");
     }
 
+    @Test
     @When ("Go to Client side delay test")
     public void clientSideDelayTest() {
-        goToHomePage();
+        openSite();
         locators.clientSideDelayTest.click();
         locators.buttonAjax.doubleClick();
         locators.buttonAjax.click();
@@ -83,9 +92,10 @@ public class AutomationPlayground {
         locators.ajaxSuccessList.shouldHave(CollectionCondition.texts(expectedText));
     }
 
+    @Test
     @When ("Go to Click test")
     public void clickTest(){
-        goToHomePage();
+        openSite();
         locators.clickTest.click();
         SelenideElement buttonBefore = locators.buttonDomEvenBefore.shouldBe(Condition.be(Condition.exist));
         buttonBefore.click();
@@ -93,9 +103,10 @@ public class AutomationPlayground {
         locators.buttonDomEventAfter.shouldBe(Condition.visible);
     }
 
+    @Test
     @When ("Go to Text input test")
     public void textInputTest(){
-        goToHomePage();
+        openSite();
         locators.buttonTextInputTest.click();
         SelenideElement updatingButton = locators.updatingButton.shouldBe(Condition.text
                                                         ("Button That Should Change it's Name Based on Input Value"));
@@ -104,21 +115,23 @@ public class AutomationPlayground {
 
         updatingButton.click();
         updatingButton.shouldBe(Condition.text("Hello, my name is Michael"));
-
     }
 
+    @Test
     @When ("Go to Scroll test")
     public void scrollTest(){
-        goToHomePage();
+        openSite();
         locators.buttonScrollTest.click();
         SelenideElement button = locators.hiddenButtonScrollTest;
         button.scrollIntoView(true);
         button.shouldBe(Condition.be(Condition.visible));
     }
 
+
+    @Test
     @When ("Go to Dynamic Table test")
     public void dynamicTableTest() {
-        goToHomePage();
+        openSite();
         locators.buttonDynamicTableTest.click();
 
         ArrayList<String> changeCpuLoadList = new ArrayList<>();
@@ -130,22 +143,23 @@ public class AutomationPlayground {
 
         for (Object text : chromeTableList) {
             if (text.equals(changeCpu)){
-                System.out.println(true);
                 break;
             }
         }
     }
 
+    @Test
     @When ("Go to Verify Text test")
     public void verifyTextTest(){
-        goToHomePage();
+        openSite();
         locators.buttonVerifyTextTest.click();
         locators.textVerifyTest.shouldHave(Condition.text("Welcome UserName!"));
     }
 
+    @Test
     @When ("Go to Progress bar test")
     public void progressBarTest(){
-        goToHomePage();
+        openSite();
         locators.buttonProgressBarTest.click();
         locators.buttonStartProgress.click();
         while (true) {
@@ -154,12 +168,12 @@ public class AutomationPlayground {
                 break;
             }
         }
-        Selenide.sleep(1000);
     }
 
+    @Test
     @When ("Go to Visibility test")
     public void visibilityTest(){
-        goToHomePage();
+        openSite();
         locators.buttonVisibilityTest.scrollIntoView(true).click();
         locators.buttonRemoved.shouldBe(Condition.exist);
         locators.buttonHide.click();
@@ -180,46 +194,57 @@ public class AutomationPlayground {
     }
 
 
-    @When("Go to Sample app test, username {string}, password {string}")
-    public void SampleAppTest(String username, String password){
-        goToHomePage();
+    @Test
+    //@When("Go to Sample app test, username {string}, password {string}")
+    public void SampleAppTest(){
+        openSite();
         locators.buttonSampleAppTest.scrollIntoView(true).click();
         locators.loginStatus.shouldHave(Condition.text("User logged out."));
-        locators.inputUserName.sendKeys(username);
-        locators.inputPassword.sendKeys(password);
+        locators.inputUserName.sendKeys("qwe");
+        locators.inputPassword.sendKeys("pwd");
         locators.buttonLogin.click();
         locators.loginStatus.shouldHave(Condition.text("Welcome, qwe!"));
-        Selenide.sleep(1000);
     }
 
 
 
+    @Test
     @When("Go to Mouse Over test")
     public void MouseOverTest(){
-        goToHomePage();
+        openSite();
         locators.buttonMouseOverTest.scrollIntoView(true).click();
         actions().moveToElement(locators.moveMouseClickMe).perform();
         locators.afterMoveMouseAction.doubleClick();
         locators.clickCount.shouldHave(Condition.text("2"));
-        Selenide.sleep(1000);
     }
 
-
+    @Test
     @When("Go to Non-Breaking Space test")
     public void nonBreakingSpaceTest(){
-        goToHomePage();
+        openSite();
         locators.buttonNonBreakingSpaceTest.scrollIntoView(true).click();
         locators.buttonMyButton.shouldHave(Condition.visible);
     }
 
-
+    @Test
     @When("Go to Overlapped element test")
     public void OverlappedElement(){
-        goToHomePage();
+        openSite();
         locators.buttonOverlappedTest.scrollIntoView(true).click();
         locators.idInput.sendKeys("qwe");
         SelenideElement nameInput = locators.nameInput;
         nameInput.scrollIntoView(true).sendKeys("abc");
-        Selenide.sleep(1000);
+    }
+
+    @Test
+    @When("Go to Shadow Dom test")
+    public void shadowDomTest(){
+        openSite();
+        locators.buttonShadowDomTest.click();
+        locators.buttonGenerate.click();
+        locators.buttonCopy.click();
+        locators.inputShadowDom.shouldBe(Condition.exist);
+        String input = locators.inputShadowDom.getValue();
+        assertEquals(input, Selenide.clipboard().getText());
     }
 }
