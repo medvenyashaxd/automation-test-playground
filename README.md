@@ -5,7 +5,7 @@ This test has elements like:
 
 Dynamic id, class attribute, hidden layers, 
 
-load delay, AJAX data, Client side delay, 
+load delay, AJAX data, client side delay, 
 
 click, text input, scrollbars, dynamic table, 
 
