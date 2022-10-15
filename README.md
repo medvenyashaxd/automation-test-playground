@@ -1,4 +1,4 @@
-# automation-test-playground
+# automation tests playground
 The java test is built on the basis of selenide, allure, cucumber and junit 5
 
 This test has elements like:
